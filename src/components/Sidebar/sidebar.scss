@@ -1,0 +1,176 @@
+@mixin flex-cols {
+	display: flex;
+	flex-direction: column;
+}
+
+@mixin opacity-transition {
+	opacity: 0;
+	transition: all 0.9s;
+}
+
+body {
+	margin: 20px;
+}
+
+#root > div {
+	@include flex-cols;
+	height: 600px;
+	padding: 10px 0 10px 15px;
+	background: black;
+}
+
+.logo {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 0 30px 0;
+	height: 27px;
+}
+
+.logo > div > span {
+	position: absolute;
+}
+
+img {
+	width: 25px;
+	height: 25px;
+	margin: 0 5px 0 0;
+}
+
+img:hover {
+	cursor: pointer;
+}
+
+button {
+	border: none;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+.main {
+	margin: 0 0 0 5px;
+}
+
+.main > div > div {
+	display: flex;
+	align-items: baseline;
+	color: #95a3ba;
+	padding: 10px;
+	margin: 0 0 0 -10px;
+}
+
+.main > div > div:hover {
+	cursor: pointer;
+	background-color: #0f172a;
+	border-radius: 10px;
+	color: white;
+}
+
+.main > div > div:active {
+	background-color: #000c45;
+	color: white;
+}
+
+.top_elements {
+	margin: 0 0 190px 0;
+}
+
+
+// closed
+.sidebar {
+	width: 40px;
+	transition: all 1.2s;
+}
+
+.sidebar > .logo > button {
+	width: 25px;
+	height: 25px;
+	background-color: black;
+	margin: 0 0 0 20px;
+	padding: 10px;
+	position: relative;
+}
+
+.sidebar > .logo > button > svg {
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	padding: 5px;
+}
+
+.sidebar > .logo > div > span {
+	@include opacity-transition;
+	margin: 0;
+	font-size: small;
+}
+
+.sidebar > .main > div > div {
+	width: 18px;
+	height: 18px;
+}
+
+.sidebar > .main > div > div > svg {
+	width: 18px;
+}
+
+.sidebar > .main > div > div > span {
+  @include opacity-transition;
+	font-size: smaller;
+	margin: 0 0 0 5px;
+}
+
+.sidebar > .main > .top_elements {
+	height: 264px;
+}
+
+
+// opened
+.opened {
+	width: 170px;
+}
+
+.opened > .logo {
+	justify-content: space-between;
+}
+
+.opened > .logo > button {
+	width: 15px;
+	background: #242424;
+	position: relative;
+	top: 0px;
+	margin: 0;
+	padding: 0;
+}
+
+.opened > .logo > button > svg {
+	position: absolute;
+	top: 3px;
+	left: 0px;
+}
+
+.opened > .logo > div {
+	display: flex;
+}
+
+.opened > .logo > div > span {
+	opacity: 1;
+	margin: 0 0 0 30px;
+	font-size: large;
+	font-weight: bold;
+}
+
+.opened > .main > div > div {
+	display: flex;
+	align-items: center;
+	width: 140px;
+}
+
+.opened > .main > div > div > svg {
+	margin: 0 5px 0 0;
+}
+
+.opened > .main > div > div > span {
+	opacity: 1;
+	font-size: medium;
+}
